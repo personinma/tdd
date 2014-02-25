@@ -14,10 +14,6 @@ class RectangleTest
 			@rect = Rectangle.new(@p1,@p2) 
 		end
 
-		after do
-			@rect.destroy!
-		end
-
 		it "Make sure created Rectangle rect is not nil" do
 			@rect.wont_be_nil
 		end

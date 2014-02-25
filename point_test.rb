@@ -12,10 +12,6 @@ class PointTest
 			@p = Point.new(1,1)
 		end
 
-		after do
-			@p.destroy!
-		end
-
 		it "Make sure created Point p of (1,1) is not nil" do
 			@p.wont_be_nil
 		end

@@ -14,10 +14,6 @@ class CircleTest
 			@cir = Circle.new(@p1,@radius) 
 		end
 
-		after do
-			@cir.destroy!
-		end
-
 		it "Make sure created Circle cir is not nil" do
 			@cir.wont_be_nil
 		end

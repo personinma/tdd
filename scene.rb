@@ -4,25 +4,27 @@
 
 class Scene
 
+	attr_reader :stack
+
 	def initialize
-		@queue = Array.new
+		@stack = Array.new
 	end
 
 	def shape_count
-		return @queue.length
+		return @stack.length
 	end
 
 	def add_shape(object)
-		@queue << object
+		@stack << object
 	end
 
 	def remove_shape
-		@queue.pop
+		@stack.pop
 	end
 
 	def total_area
 		sum_area = 0
-		@queue.each do |shape|
+		@stack.each do |shape|
 			sum_area += shape.area
 		end
 		return sum_area

@@ -14,10 +14,6 @@ class TraingleTest
 			@tri = Triangle.new(@p1,@p2) 
 		end
 
-		after do
-			@tri.destroy!
-		end
-
 		it "Make sure created Triangle tri is not nil" do
 			@tri.wont_be_nil
 		end
