@@ -19,15 +19,15 @@ class RectangleTest
 		end
 
 		it "Test p1 in Rectangle rect is Point (-1,-1)" do
-			assert_equal @rect.p1, @p1
+			assert_equal @p1, @rect.p1
 		end
 
 		it "Test p2 in Rectangle rect is Point (3,3)" do
-			assert_equal @rect.p2, @p2
+			assert_equal @p2, @rect.p2
 		end
 
 		it "Test rect.area should equal 16" do
-			assert_equal @rect.area, 16
+			assert_equal 16, @rect.area
 		end
 
 	end

@@ -11,7 +11,7 @@ class CircleTest
 		before do
 			@p1 = Point.new(1,1)
 			@rad = 1
-			@cir = Circle.new(@p1,@radius) 
+			@cir = Circle.new(@p1,@rad) 
 		end
 
 		it "Make sure created Circle cir is not nil" do
@@ -19,7 +19,7 @@ class CircleTest
 		end
 
 		it "Test p1 in Circle cir is Point (1,1)" do
-			assert_equal @cir.p1, @p1
+			assert_equal @cir.p, @p1
 		end
 
 		it "Test radius in Circle cir is 1" do

@@ -19,15 +19,15 @@ class TraingleTest
 		end
 
 		it "Test p1 in Triangle tri is Point (-1,-1)" do
-			assert_equal @tri.p1, @p1
+			assert_equal @p1, @tri.p1
 		end
 
 		it "Test p2 in Triangle tri is Point (3,3)" do
-			assert_equal @tri.p2, @p2
+			assert_equal @p2, @tri.p2
 		end
 
 		it "Test rect.area should equal 8" do
-			assert_equal @tri.area, 8
+			assert_equal 8, @tri.area
 		end
 
 	end

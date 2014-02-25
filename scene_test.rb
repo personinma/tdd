@@ -7,7 +7,7 @@ require_relative 'rectangle.rb'
 require_relative 'triangle.rb'
 require_relative 'circle.rb'
 
-class SceneTest
+class SceneTest < MiniTest::Unit::TestCase
 
 	describe Scene, "Scene Class Unit Test" do 
 
@@ -19,37 +19,33 @@ class SceneTest
 			@tri = Triangle.new(p1,p2)
 			@cir = Circle.new(p3,1)
 			@sce = Scene.new
-		end
-
-		it "Check if Scene sce.stack is nil initially" do
-			@sce.stack.must_be_nil
+			@sce.add_shape(@rect)
+			@sce.add_shape(@tri)
+			@sce.add_shape(@cir)
 		end
 
 		it "Add rect to Scene sce" do
-			@sce.add_shape(@rect)
 			@sce.stack[0].must_be_instance_of Rectangle
 		end
 
 		it "Add tri to Scene sce" do
-			@sce.add_shape(@tri)
 			@sce.stack[1].must_be_instance_of Triangle
 		end
 
 		it "Add cir to Scene sce" do
-			@sce.add_shape(@cir)
 			@sce.stack[2].must_be_instance_of Circle
 		end
 
 		it "Number of shapes in scene is 3" do
-			assert_equal @sce.shape_count, 3
+			assert_equal 3, @sce.shape_count
 		end
 
 		it "Total area of shapes in scene should be 24 + pi" do
-			assert_equal @sce.total_area, (24 + Math::PI)
+			assert_equal (24 + Math::PI), @sce.total_area
 		end
 
 		it "Remove the last shape added from Scene sce, equals to @cir" do
-			assert_equal @sce.remove_shape, @cir
+			assert_equal @cir, @sce.remove_shape
 		end
 
 	end
