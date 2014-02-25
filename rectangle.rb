@@ -1,7 +1,7 @@
 # Author: Steven Hu
 # Class Rectangle: takes two points on a plane and form a rectangle with them
 
-require_relative 'point'
+require_relative 'point.rb'
 
 class Rectangle
 
