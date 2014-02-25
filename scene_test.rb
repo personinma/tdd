@@ -21,7 +21,7 @@ class SceneTest
 			@sce = Scene.new
 		end
 
-		it "Check if Scene sce.stack is nil initially"
+		it "Check if Scene sce.stack is nil initially" do
 			@sce.stack.must_be_nil
 		end
 
