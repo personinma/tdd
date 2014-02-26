@@ -16,11 +16,12 @@ class Triangle
 	end
 
 	def area
-		sq_area = (@x.max-@x.min).abs * (@y.max-@y.min).abs
-		tri_1 = ((p1.x-p2.x).abs * (p1.y-p2.y).abs)/2
-		tri_2 = ((p3.x-p2.x).abs * (p3.y-p2.y).abs)/2
-		tri_3 = ((p1.x-p3.x).abs * (p1.y-p3.y).abs)/2
-		return sq_area - tri_1 - tri_2 - tri_3
+		sq_area = tri_area(Point.new(@x.min,@y.min),Point.new(@x.max,@y.max)) * 2
+		return sq_area - tri_area(@p1,@p2) - tri_area(@p2,@p3) - tri_area(@p3,@p1)
 	end
 
+	def tri_area(pt1, pt2)
+		return ((pt1.x-pt2.x).abs * (pt1.y-pt2.y).abs)/2
+	end
+	
 end
