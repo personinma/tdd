@@ -12,12 +12,9 @@ class SceneTest < MiniTest::Unit::TestCase
 	describe Scene, "Scene Class Unit Test" do 
 
 		before do
-			p1 = Point.new(-1,-1)
-			p2 = Point.new(3,3)
-			p3 = Point.new(1,1)
-			@rect = Rectangle.new(p1,p2)
-			@tri = Triangle.new(p1,p2)
-			@cir = Circle.new(p3,1)
+			@rect = Rectangle.new(Point.new(-1,-1),Point.new(3,3))
+			@tri = Triangle.new(Point.new(0,0),Point.new(5,4),Point.new(8,2))
+			@cir = Circle.new(Point.new(1,1),1)
 			@sce = Scene.new
 			@sce.add_shape(@rect)
 			@sce.add_shape(@tri)
@@ -40,8 +37,8 @@ class SceneTest < MiniTest::Unit::TestCase
 			assert_equal 3, @sce.shape_count
 		end
 
-		it "Total area of shapes in scene should be 24 + pi" do
-			assert_equal (24 + Math::PI), @sce.total_area
+		it "Total area of shapes in scene should be 27 + pi" do
+			assert_equal (27 + Math::PI), @sce.total_area
 		end
 
 		it "Remove the last shape added from Scene sce, equals to @cir" do
